@@ -14,7 +14,9 @@ class CreateAdminTypesTable extends Migration
     public function up()
     {
         Schema::create('admin_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('admin_type');
+            $table->string('permissions');
             $table->timestamps();
         });
     }

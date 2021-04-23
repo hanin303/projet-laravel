@@ -14,10 +14,15 @@ class CreateAdminusersTable extends Migration
     public function up()
     {
         Schema::create('adminusers', function (Blueprint $table) {
-
-            
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('user_name');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('password');
+            $table->integer('type_id')->unsigned();
             $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('admin_types')->onDelete('restrict')->onUpdate('restrict');
+            ;
         });
     }
 
