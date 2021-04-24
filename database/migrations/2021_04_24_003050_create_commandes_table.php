@@ -14,12 +14,13 @@ class CreateCommandesTable extends Migration
     public function up()
     {
         Schema::create('commandes', function (Blueprint $table) {
-            $table->increments('id_commande');
+            $table->increments('id');
             $table->date('Date_commande');   
             $table->integer('id_client')->unsigned();   
             $table->timestamps();
             $table->foreign('id_client')->references('id')->on('clients')->onDelete('restrict')->onUpdate('restrict');
-      });
+    
+        });
     }
 
     /**
