@@ -15,11 +15,11 @@ class CreatePaniersTable extends Migration
     {
         Schema::create('paniers', function (Blueprint $table) {
             $table->increments('id_panier');
-            //$table->integer('id_produit')->unsigned();
+            $table->integer('id_produit')->unsigned();
             $table->integer('id_commande')->unsigned();
             $table->integer('Quantite');
             $table->timestamps();
-           //$table->foreign('id_produit')->reference('id_produit')->on('produits')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('id_produit')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('id_commande')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
 
         });
