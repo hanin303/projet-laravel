@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('adresse_client');
             $table->string('email_client');
             $table->string('mdp_client');
-            $table->integer('telephone_client');
+            $table->Biginteger('telephone_client');
             $table->timestamps();
 
         });

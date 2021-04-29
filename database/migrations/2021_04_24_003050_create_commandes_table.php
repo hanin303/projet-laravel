@@ -16,9 +16,9 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->increments('id');
             $table->date('Date_commande');   
-            $table->integer('id_client')->unsigned();   
+            $table->integer('client_id')->unsigned();   
             $table->timestamps();
-            $table->foreign('id_client')->references('id')->on('clients')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('restrict')->onUpdate('restrict');
     
         });
     }

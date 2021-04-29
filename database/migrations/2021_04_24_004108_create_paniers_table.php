@@ -14,13 +14,13 @@ class CreatePaniersTable extends Migration
     public function up()
     {
         Schema::create('paniers', function (Blueprint $table) {
-            $table->increments('id_panier');
-            $table->integer('id_produit')->unsigned();
-            $table->integer('id_commande')->unsigned();
+            $table->increments('id');
+            $table->integer('produit_id')->unsigned();
+            $table->integer('commande_id')->unsigned();
             $table->integer('Quantite');
             $table->timestamps();
-            $table->foreign('id_produit')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('id_commande')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
 
         });
     }
