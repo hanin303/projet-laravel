@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminusersTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdminusersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Adminuser', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_name');
             $table->string('first_name');
@@ -21,7 +21,7 @@ class CreateAdminusersTable extends Migration
             $table->string('password');
             $table->integer('type_id')->unsigned();
             $table->timestamps();
-            $table->foreign('type_id')->references('id')->on('admin_type')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateAdminusersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Adminuser');
+        Schema::dropIfExists('admins');
     }
 }
