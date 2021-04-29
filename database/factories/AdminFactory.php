@@ -1,17 +1,18 @@
+<?php
 
-<?php 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Admin_type;
-use App\Adminuser;
+
+use App\Admin;
+use App\Type;
 use Faker\Generator as Faker;
 
-$factory->define(Adminuser::class, function (Faker $faker) {
+$factory->define(Admin::class, function (Faker $faker) {
     return [
         'user_name' => $faker-> word,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'password' => $faker-> sentence,
-        'type_id'=> Admin_type::get('id')->random(),
+        'type_id'=> Type::get('id')->random(),
         'created_at' => now()
     ];
 });
