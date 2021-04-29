@@ -5,7 +5,7 @@
 use App\Admin;
 use App\Type;
 use Faker\Generator as Faker;
-
+/* qqq  */
 $factory->define(Admin::class, function (Faker $faker) {
     return [
         'user_name' => $faker-> word,
