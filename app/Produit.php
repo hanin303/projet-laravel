@@ -10,5 +10,6 @@ class Produit extends Model
     {
         return $this->hasMany('App\Detail');
     }
+
  
 }
