@@ -10,8 +10,5 @@ class Produit extends Model
     {
         return $this->hasMany('App\Detail');
     }
-  /*  public function commande()
-    {
-        return $this->belongsTo('App\Commande');
-    }*/
+ 
 }

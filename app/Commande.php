@@ -11,9 +11,9 @@ class Commande extends Model
       return $this->belongsTo('App\Client');
   }
 
-  /*
+  
   public function details()
   {
       return $this->hasMany('App\Detail');
-  }*/
+  }
 }
