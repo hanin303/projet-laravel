@@ -16,11 +16,11 @@ class CreateDetailsTable extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('produit_id')->unsigned();
-           // $table->integer('commande_id')->unsigned();
+           //$table->integer('commande_id')->unsigned();
             $table->integer('Quantite');
             $table->timestamps();
             $table->foreign('produit_id')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
-          //  $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
+          //$table->foreign('commande_id')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
