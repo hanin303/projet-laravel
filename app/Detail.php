@@ -12,9 +12,11 @@ class Detail extends Model
     }
 
 
+
     public function commande()
     {
         return $this->belongsTo('App\Commande');
     }
+
 
 }

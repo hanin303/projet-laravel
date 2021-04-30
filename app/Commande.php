@@ -17,4 +17,3 @@ class Commande extends Model
       return $this->hasMany('App\Detail');
   }
 
-}
