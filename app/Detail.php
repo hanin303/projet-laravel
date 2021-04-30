@@ -11,8 +11,8 @@ class Detail extends Model
         return $this->belongsTo('App\Produit');
     }
 
-    //   public function commande()
-    // {
-    //     return $this->belongsTo('App\Commande');
-    // }
+      public function commande()
+    {
+        return $this->belongsTo('App\Commande');
+    }
 }

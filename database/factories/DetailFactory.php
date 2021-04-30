@@ -11,7 +11,7 @@ $factory->define(Detail::class, function (Faker $faker) {
     return [
         'Quantite'=>$faker->randomDigit,
         'produit_id' =>Produit::get('id')->random(),
-       // 'commande_id' =>Commande::get('id')->random(),
+        'commande_id' =>Commande::get('id')->random(),
         'created_at' => now()
     ];
 });
