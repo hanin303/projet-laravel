@@ -37412,6 +37412,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 __webpack_require__(/*! C:\Users\hanin\Desktop\Meeting 4 laravel\E_Commerce_Project\E_Commerce_Project\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\hanin\Desktop\Meeting 4 laravel\E_Commerce_Project\E_Commerce_Project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\User\Desktop\Semestre_2_toutes_les_matieres\FrameWork\laravel\projet-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\User\Desktop\Semestre_2_toutes_les_matieres\FrameWork\laravel\projet-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

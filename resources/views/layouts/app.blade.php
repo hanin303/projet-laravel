@@ -18,14 +18,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark     bg-secondary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <!--{{ config('app.name', 'Laravel') }}-->
-                    E-Commerce Website 
+                    E-Commerce
+
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,10 +74,21 @@
                 </div>
             </div>
         </nav>
-
-        <main class="container py-4">
+        <div class="container">
+        <main class="py-4">
             @yield('content')
         </main>
+        </div>
     </div>
+    <div class="footer-copyright text-center py-5 ">© 2020 Copyright:
+  <a href="https://mdbootstrap.com/" > MDBootstrap.com</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
 </body>
+
+
 </html>

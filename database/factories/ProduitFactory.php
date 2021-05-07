@@ -12,6 +12,8 @@ $factory->define(Produit::class, function (Faker $faker) {
         'nom_produit'=>$faker->word,
         'stock_produits' =>$faker->randomDigit,
         'prix' =>$faker->randomFloat(3,0,999999),
+        'description_produits' => $faker->sentence,
+        'photo_produit' => $faker->imageUrl,
         'created_at' => now()
     ];
 });
