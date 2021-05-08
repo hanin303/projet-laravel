@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('welcome');
+       // $this->middleware('auth')->except('welcome');
     }
 
     /**
@@ -25,6 +25,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function dashboardAdmin()
+    {
+        return view('Admin.Dashbord_Admin');
     }
 
     public function welcome()
