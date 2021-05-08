@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Produit;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +29,7 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        return view('welcome');
+        $produits = Produit::inRandomOrder()->limit(6)->get();
+        return view('welcome',['Produits'=>$produits]);
     }
 }
