@@ -192,7 +192,7 @@ body {
         right: 10px;
         top: 18px;
         display: inline-block;
-        float: right;
+        /* float: right; */
         padding: 7px 0;
         position: absolute; }
         .card .card-header .card-header-right i {
@@ -403,7 +403,8 @@ body {
   
   .card-block ul li.list-inline-item {
     display: inline-block;
-    float: left; }
+    /* float: left;  */
+  }
   
   /*======= Typography css end ========*/
   /**  =====================
@@ -5570,10 +5571,10 @@ body {
     text-transform: capitalize;
     visibility: visible;
     width: 100%;
-    -webkit-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
+    /* -webkit-transform: rotateX(0deg); */
+    /* -ms-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
-    -o-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg); */
     transition: opacity 0.3s linear;
     -webkit-transition: opacity 0.3s linear;
     -ms-transition: opacity 0.3s linear;
@@ -6593,7 +6594,7 @@ body {
     body .pcoded[vertical-nav-type="compact"] .main-menu .pcoded-badge {
       display: none; }
   body.menu-bottom .navbar-wrapper {
-    .z-index: 1050; }
+    z-index: 1050; }
   body.menu-bottom .pcoded .pcoded-main-container {
     margin-top: 0 !important; }
   body.menu-bottom .p-chat-user,
@@ -6657,7 +6658,8 @@ body {
     .button-page .card-block ul li {
       display: inline-block;
       margin-right: 20px;
-      float: left; }
+      /* float: left;  */
+    }
   
   .button-page .btn {
     margin-bottom: 20px;
@@ -7992,7 +7994,7 @@ body {
       border: 2px solid #4680ff;
       cursor: pointer;
       display: inline-block;
-      float: left;
+      /* float: left; */
       height: 20px;
       margin-right: 0.5em;
       position: relative;
@@ -9092,7 +9094,7 @@ body {
       border: 2px solid #CFD4D8;
       cursor: pointer;
       display: inline-block;
-      float: left;
+      /* float: left; */
       top: 10px;
       height: 22px;
       margin-right: 1.2em;
@@ -13505,7 +13507,7 @@ body {
     color: #666;
     background-size: 15%; }
   #task-container li {
-    float: left;
+    /* float: left; */
     width: 49%;
     overflow: auto;
     height: auto;
@@ -13840,7 +13842,7 @@ body {
       display: none; }
   
     .dataTables_paginate .pagination {
-      float: inherit;
+      /* float: inherit; */
       text-align: center;
       display: inline-block;
       margin-top: 10px !important; }
@@ -13973,7 +13975,7 @@ body {
       margin-right: 20px !important; }
   
     .pagination {
-      float: inherit;
+      /* float: inherit; */
       text-align: center;
       display: inline-block;
       margin-top: 10px !important; }
