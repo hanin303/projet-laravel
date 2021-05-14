@@ -3,6 +3,7 @@
 
 <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
+        
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
@@ -49,7 +50,6 @@
                                   <a class="nav-link" href="#">
                                     <span data-feather="shopping-cart"></span>
                                     Products
-                                  </a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="#">
@@ -105,7 +105,7 @@
                               </ul>
                         </div>
                     </nav>
-                  
+            
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <div class="main-body">
