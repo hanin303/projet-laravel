@@ -26,6 +26,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Other</div>
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                   <a class="nav-link active" href="#">
@@ -33,6 +34,12 @@
                                     Dashboard <span class="sr-only">(current)</span>
                                   </a>
                                 </li>
+                                <li class="nav-item">
+                          <a class="nav-link" href="#">
+                                      <span data-feather="file-text"></span>
+                                      Users
+                                    </a>
+                                  </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="#">
                                     <span data-feather="file"></span>
@@ -43,7 +50,6 @@
                                   <a class="nav-link" href="#">
                                     <span data-feather="shopping-cart"></span>
                                     Products
-                                  </a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link" href="#">
@@ -518,7 +524,7 @@
 <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- jquery slimscroll js -->
-<script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
 <!-- modernizr js -->
 <script type="text/javascript" src="assets/js/modernizr/modernizr.js"></script>
 <!-- am chart -->
