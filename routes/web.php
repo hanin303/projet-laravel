@@ -22,4 +22,4 @@ Route::get('/', function ()  {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@dashboardAdmin');
+Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin');

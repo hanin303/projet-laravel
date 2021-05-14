@@ -26,73 +26,83 @@
                                 </div>
                             </div>
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Other</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
-                                    <a href="index.html">
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
-                                        <span class="pcoded-mcaret"></span>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link active" href="#">
+                                    <span data-feather="home"></span>
+                                    Dashboard <span class="sr-only">(current)</span>
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                          <a class="nav-link" href="#">
+                                      <span data-feather="file-text"></span>
+                                      Users
                                     </a>
+                                  </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file"></span>
+                                    Orders
+                                  </a>
                                 </li>
-                                
-                                        <li class=" ">
-                                            <a href="Products.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Products </span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="notification.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Notification</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="Categories.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Categories</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="shopping-cart"></span>
+                                    Products
+                                  </a>
                                 </li>
-                            </ul>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Pages</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
-                                    <li class="active">
-                                        <a href="profile.html">
-                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">View Profile </span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="profile.html">
-                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">Settings</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="auth-normal-sign-in.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Logout</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                        
-                                    </ul>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="users"></span>
+                                    Customers
+                                  </a>
                                 </li>
-                                
-                            </ul>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="bar-chart-2"></span>
+                                    Reports
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="layers"></span>
+                                    Integrations
+                                  </a>
+                                </li>
+                              </ul>
+                      
+                              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                                <span>Saved reports</span>
+                                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                                  <span data-feather="plus-circle"></span>
+                                </a>
+                              </h6>
+                              <ul class="nav flex-column mb-2">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Current month
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Last quarter
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Social engagement
+                                  </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">
+                                    <span data-feather="file-text"></span>
+                                    Year-end sale
+                                  </a>
+                                </li>
+                              </ul>
                         </div>
                     </nav>
                   
@@ -514,7 +524,7 @@
 <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- jquery slimscroll js -->
-<script type="text/javascript" src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
 <!-- modernizr js -->
 <script type="text/javascript" src="assets/js/modernizr/modernizr.js"></script>
 <!-- am chart -->
