@@ -23,4 +23,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin');
-
+Route::resource('admins','Admin\AdminController');

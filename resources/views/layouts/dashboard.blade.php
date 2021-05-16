@@ -102,7 +102,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Other</div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
                           <a class="nav-link active" href="#">
@@ -111,9 +110,9 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                  <a class="nav-link" href="#">
+                        <a class="nav-link" href="/admins">
                               <span data-feather="file-text"></span>
-                              Users
+                            Admins 
                             </a>
                           </li>
                         <li class="nav-item">
