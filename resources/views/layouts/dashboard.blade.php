@@ -110,9 +110,9 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="/admins">
+                  <a class="nav-link" href="/admins">
                               <span data-feather="file-text"></span>
-                            Admins 
+                             Admins
                             </a>
                           </li>
                         <li class="nav-item">

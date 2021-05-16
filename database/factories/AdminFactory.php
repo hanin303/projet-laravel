@@ -11,6 +11,8 @@ $factory->define(Admin::class, function (Faker $faker) {
         'user_name' => $faker-> word,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
+        'email_admin' => $faker->freeEmail,
+        'phone_admin' => $faker->e164PhoneNumber,
         'photo' => $faker->imageUrl,
         'password' => $faker-> sentence,
         'type_id'=> Type::get('id')->random(),

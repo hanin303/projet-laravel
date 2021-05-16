@@ -1,3 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 70%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+</head>
+<body>
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')
@@ -5,7 +27,31 @@
 <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
             
-             <h1>Admins List</h1>
+             <h3>Admins List</h3>
+             <div>
+             <table>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($admins as $Key => $admin)
+                        
+                  <tr>
+                    <th scope="row">{{ $Key }}</th>
+                    <td>{{$admin ->first_Name}}</td>
+                    <td>{{$admin ->email_admin}}</td>
+                    <td>{{$admin ->phone_admin}}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+             </div>
+
                     
                 </div>
                 <div class="fixed-button">
@@ -50,3 +96,6 @@ var nav = $('.fixed-button');
  });
 </script>
 @endsection
+  
+</body>
+</html>
