@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,6 @@
     </style>
 </head>
 <body>
-
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')
@@ -51,9 +51,6 @@
                 </tbody>
               </table>
              </div>
-
-
-
 
                     
                 </div>
