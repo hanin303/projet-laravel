@@ -15,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view ('Admin.Client.index');
+       return view ('Admin.Clients.indexClient',['clients' => Client::paginate(2)]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Clients.createClient') ;   
     }
 
     /**
@@ -36,7 +36,18 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatationData = $request->validate($this->ValidationData());
+
+        $client = new Client;
+        $client->nom_client = $request->nom;
+        $client->prenom_client = $request->prenom;
+        $client->telephone_client= $request->telf;
+        $client->email_client = $request->mail;
+        $client->adresse_client = $request->adresse;
+        $client->save();
+
+      //$client = Client::create($validatationData);
+        return redirect()->route('clients.show',$client);
     }
 
     /**
@@ -47,7 +58,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('Admin.Clients.showClient',['client' => $client]);
     }
 
     /**
@@ -58,7 +69,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view('Admin.Clients.editClient',['client'=>$client]);
     }
 
     /**
@@ -70,8 +81,16 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
-    }
+        $validatationData = $request->validate($this->ValidationData());
+
+        $client->nom_client = $request->nom;
+        $client->prenom_client = $request->prenom;
+        $client->telephone_client= $request->telf;
+        $client->email_client = $request->mail;
+        $client->adresse_client = $request->adresse;
+        $client->save();
+        return redirect()->route('clients.show',$client);
+      }
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +100,18 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect()->route('clients.index');
+    }
+
+
+    private function ValidationData(){
+        return [
+            'nom' =>'required|min:2',
+            'prenom' =>'required|min:2',
+            'telf' =>'required|size:11',
+            'mail' =>'required|email',
+            'adresse' =>'required|min:2',
+        ];
     }
 }

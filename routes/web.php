@@ -12,7 +12,7 @@
 |
 */
 
-Route::get('/', 'HomeController@welcome');
+Route::get('/', 'HomeController@welcome')->name('welcome');
 
 /*
 Route::get('/', function ()  {
@@ -30,4 +30,5 @@ Route::resource('admins' , 'Admin\AdminController');
 Route::resource('produits' , 'Admin\ProduitController');
 
 
+Route::resource('clients' , 'Admin\ClientController');
 
