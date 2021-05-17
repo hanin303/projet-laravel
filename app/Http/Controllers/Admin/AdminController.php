@@ -43,9 +43,7 @@ class AdminController extends Controller
 'last_name' => 'required|min:3',
 'email_admin' => 'required|email',
 'phone_admin' => 'required',
-'photo' => 'required|min:2',
 'password' => 'required|min:5',
-'type_id' => 'required',
 
             ]);
   
@@ -96,7 +94,6 @@ class AdminController extends Controller
             $admin -> update($validatedData);
             return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
     }
-
     /**
      * Remove the specified resource from storage.
      *
