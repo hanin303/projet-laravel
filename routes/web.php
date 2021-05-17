@@ -1,5 +1,6 @@
 <?php
-
+ use Illuminate\Support\Facades\Route;
+ use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin');
 
 Route::resource('admins' , 'Admin\AdminController');
+
+Route::resource('produits' , 'Admin\ProduitController');
+
+
 
