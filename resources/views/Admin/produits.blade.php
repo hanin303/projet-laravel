@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://kit.fontawesome.com/3a7c0ab2e8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
   <style>
     table {
       border-collapse: collapse;
@@ -16,7 +19,7 @@
       padding: 8px;
     }
     
-    tr:nth-child(even) {background-color: #f2f2f2;}
+    /* tr:nth-child(even) {background-color: #f2f2f2;} */
     </style>
 </head>
 <body>
@@ -27,26 +30,36 @@
 <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
             
-             <h3>Admins List</h3>
+             <h3>Liste Produit</h3>
              <div>
              <table>
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">phone</th>
+                    <th scope="col"><i class="fab fa-product-hunt"></i>Nom Produit</th>
+                    <th scope="col"><i class="fas fa-cubes"></i>Stock Produit</th>
+                    <!-- <th scope="col">Description Produit</th> -->
+                    <th scope="col"><i class="fas fa-hand-holding-usd"></i>Prix</th>
+                    <th scope="col"><i class="fas fa-cogs"></i> Opérations</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($admins as $Key => $admin)
+                    @foreach ($produits as $Key => $produit)
                         
                   <tr>
                     <th scope="row">{{ $Key }}</th>
-                    <td>{{$admin ->first_Name}}</td>
-                    <td>{{$admin ->email_admin}}</td>
-                    <td>{{$admin ->phone_admin}}</td>
-                  </tr>
+                     <td>{{$produit ->nom_produit}}</td>
+                   <td>{{$produit ->stock_produits}}</td>
+                    <!-- <td>{{$produit ->description_produits}}</td> -->
+                    <td>{{$produit ->prix}}</td>
+                    <td> 
+                    <a href="#" class="btn btn-primary" style="background-color: #0082ca;"  ><i class="fas fa-user-tag"></i></a>
+                    <a href="#"class="btn btn-warning" style="background-color: #ffac44;"><i class="fas fa-user-edit"></i> </a>
+                    <a href="#" class="btn btn-danger" style="background-color: #c61118;"><i class="fas fa-trash-alt"></i></a>
+                   </td>
+                    
+                    
+                    </tr>
                   @endforeach
                 </tbody>
               </table>

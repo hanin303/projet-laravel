@@ -534,6 +534,7 @@ body{
 </head>
 
 <body>
+
     <div class="container" class="main_content" id="slider">
         <!-- container Begin -->
 
