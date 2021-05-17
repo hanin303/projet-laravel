@@ -15,7 +15,7 @@ class ProduitController extends Controller
      */
     public function index()
     {
-        return view ('Admin.produits' , ['produits' => Produit::all()]);
+        return view ('Admin.produits' , ['produits' => Produit::paginate(10)]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProduitController extends Controller
      */
     public function create()
     {
-        //
+        return view ('Admin.createProduit');
     }
 
     /**
@@ -36,7 +36,17 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate(
+            [
+                'nom_produit' => 'required',
+                'stock_produits' => 'required',
+                'description_produits' => 'required',
+                'prix' => 'required',
+            ]);
+
+        $produit =Produit::create($validatedData);
+
+        return redirect()->route('produits.index', $produit);
     }
 
     /**
@@ -45,9 +55,10 @@ class ProduitController extends Controller
      * @param  \App\Produit  $produit
      * @return \Illuminate\Http\Response
      */
-    public function show(Produit $produit)
+    public function show($id)
     {
-        //
+        $produit = Produit::find($id); 
+        return view ('Admin.showProduit' ,['produit' =>  $produit ]);
     }
 
     /**
@@ -58,7 +69,7 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
-        //
+        return view('Admin.editProduit', ['produit' => $produit]);
     }
 
     /**
@@ -70,7 +81,16 @@ class ProduitController extends Controller
      */
     public function update(Request $request, Produit $produit)
     {
-        //
+        $validatedData = $request->validate(
+            [
+                'nom_produit' => 'required',
+                'stock_produits' => 'required',
+                'description_produits' => 'required',
+                'prix' => 'required',
+                            ]);
+        $produit->update($validatedData);
+
+        return redirect()->route('Admin.produits', $produit)->with('updateProduct', "Product has been updated successfuly");
     }
 
     /**
@@ -81,6 +101,9 @@ class ProduitController extends Controller
      */
     public function destroy(Produit $produit)
     {
-        //
+        $produit->delete();
+        return redirect()->route('produits.index')->with('deleteProduct', 'Product has been deleted!');
     }
+   
 }
+
