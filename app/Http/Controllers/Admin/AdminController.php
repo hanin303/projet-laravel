@@ -48,7 +48,7 @@ class AdminController extends Controller
 'type_id' => 'required',
 
             ]);
-
+  
         $admin = Admin::create($validatedData);
         return redirect()->route('admins.index',$admin);
        }

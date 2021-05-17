@@ -1,3 +1,11 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <body>
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')
@@ -95,10 +103,7 @@
 </form>
 
 </fieldset>
-
-
-
-                    
+         
             </div>
             <div class="fixed-button">
                 <a href="https://codedthemes.com/item/guru-able-admin-template/" target="_blank" class="btn btn-md btn-primary">
@@ -141,4 +146,7 @@ $window.scroll(function(){
  }
 });
 </script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 @endsection
+</body>
+</html>
