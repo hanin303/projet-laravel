@@ -1,4 +1,3 @@
-
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')

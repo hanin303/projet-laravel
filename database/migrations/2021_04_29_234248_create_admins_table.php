@@ -24,7 +24,7 @@ class CreateAdminsTable extends Migration
             $table->string('password');
             $table->integer('type_id')->unsigned();
             $table->timestamps();
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

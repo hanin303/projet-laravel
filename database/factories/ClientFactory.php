@@ -11,6 +11,7 @@ $factory->define(Client::class, function (Faker $faker) {
         'prenom_client' => $faker->firstName,
         'adresse_client' => $faker->address,
         'email_client' => $faker->freeEmail,
+        'photo_client' => $faker->imageUrl,
         'mdp_client' => $faker->sentence,
         'telephone_client' => $faker->e164PhoneNumber,
         'created_at' => now()

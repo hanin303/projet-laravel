@@ -19,8 +19,8 @@ class CreateDetailsTable extends Migration
             $table->integer('commande_id')->unsigned();
             $table->integer('Quantite');
             $table->timestamps();
-            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('produit_id')->references('id')->on('produits')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('commande_id')->references('id')->on('commandes')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
