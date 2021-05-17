@@ -43,9 +43,7 @@ class AdminController extends Controller
 'last_name' => 'required|min:3',
 'email_admin' => 'required|email',
 'phone_admin' => 'required',
-'photo' => 'required|min:2',
 'password' => 'required|min:5',
-'type_id' => 'required',
 
             ]);
   
@@ -93,7 +91,17 @@ class AdminController extends Controller
              'email_admin' => 'required|email',
              'phone_admin' => 'required',
             ]);
-            $admin -> update($validatedData);
+
+            $admin = new Admin;
+            $admin->first_name = $request->nom;
+            $admin->last_name = $request->prenom;
+            $admin->email_admin= $request->telf;
+            $admin->phone_admin = $request->mail;
+            $admin->photo = $request->photo;
+            $admin->password = $request->password;
+            $admin->type_id = $request->type_id;
+            $admin ->save();
+            //$admin -> update($validatedData);
             return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
     }
 

@@ -16,7 +16,7 @@
 <fieldset>
    <legend> <i class ="fas fa-user-plus"></i> Add new Admin  </legend>
    <form action ="{{ route('admins.store')}}"method="post"> 
-    @method('GET')
+    {{-- @method('GET') --}}
    @csrf
   
    <div class ="form-group">
@@ -60,7 +60,7 @@
                   @enderror
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class ="col"><div class ="form-group">
                         <label for="photo"> Photo </label>
                         <input type ="text" name="photo" value ="{{old('photo')}}"  id="photo" class="form-control"  @error ('photo ') is-invalid @enderror placeholder="photo" >
@@ -68,7 +68,7 @@
                         <div class="  text-danger">{{ $message}}</div>
                         @enderror
                     </div>
-                   </div>
+                   </div> --}}
                    
                    <div class ="col"> <div class ="form-group">
                         <label for="password">Password</label>
@@ -82,14 +82,14 @@
 
 
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="exampleFormControlSelect1">Type id</label>
                     <select class="form-control" id="type_id">
                       <option value='1'>Full acceess admin</option>
                       <option value='2'>limited access admin</option>
                       <option value='3'>full control admin</option>    
                     </select>
-                  </div>
+                  </div> --}}
 
 
 
