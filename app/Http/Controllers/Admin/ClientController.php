@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Admin;
+use App\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view ('Admin.index' , ['admins' => Admin::all()]);
+        return view ('Admin.Client.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view ('Admin.createAdmin');
+        //
     }
 
     /**
@@ -36,39 +36,27 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate(
-            [
-'user_name' => 'required|min:3',
-'first_name' => 'required|min:3',
-'last_name' => 'required|min:3',
-'email_admin' => 'required|email',
-'phone_admin' => 'required',
-            ]);
-
-        $admin = Admin::create($validateData);
-        return redirect()->route('admins.show',$admin);
-       }
+        //
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Client $client)
     {
-        $admin = Admin::find($id); 
-        return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit(Client $client)
     {
         //
     }
@@ -77,10 +65,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Admin  $admin
+     * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Client $client)
     {
         //
     }
@@ -88,10 +76,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(Client $client)
     {
         //
     }

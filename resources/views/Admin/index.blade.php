@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,34 +7,39 @@
   <style>
     table {
       border-collapse: collapse;
-      width: 70%;
+      width: 75%;
     }
     
     th, td {
       text-align: left;
       padding: 8px;
     }
-    
+    tr:hover {background-color:#81d6e6e3;}
     tr:nth-child(even) {background-color: #f2f2f2;}
     </style>
 </head>
 <body>
+
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')
 
 <div class="pcoded-main-container">
+  
                 <div class="pcoded-wrapper">
-            
-             <h3>Admins List</h3>
+            <a href="{{route('admins.create')}}" class="btn btn-outline-primary btn-lg float-right"><i class ="fas fa-user-plus"></i> Add new Admin </a>
+            <br>
+             <h3><i class ="fas fa-users-cog"></i>  Admins List</h3>
+             <br>
              <div>
              <table>
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">phone</th>
+                    <th scope="col"><i class ="fas fa-user"></i>    Name</th>
+                    <th scope="col"><i class ="fas fa-envelope"></i>   Email</th>
+                    <th scope="col"><i class ="fas fa-phone"></i>   phone</th>
+                    <th scope="col"><i class ="fas fa-cogs"></i>    operations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -43,21 +47,29 @@
                         
                   <tr>
                     <th scope="row">{{ $Key }}</th>
-                    <td>{{$admin ->first_Name}}</td>
+                    <td>{{$admin ->first_name.' '.$admin ->last_name}}</td>
                     <td>{{$admin ->email_admin}}</td>
                     <td>{{$admin ->phone_admin}}</td>
+                    <td>
+                      <a href="{{route('admins.show' , ['admin' =>$admin -> id])}} "class="btn btn-primary"><i class ="fas fa-user-tag"></i> Show</a>
+                      <a href="#" class="btn btn-warning"><i class ="fas fa-user-edit"></i>Edit</a>
+                      <a href="#" class="btn btn-danger"><i class ="fas fa-user-slash"></i>delete</a> 
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
              </div>
 
+
+
+
                     
                 </div>
                 <div class="fixed-button">
                     <a href="https://codedthemes.com/item/guru-able-admin-template/" target="_blank" class="btn btn-md btn-primary">
                       <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-                    </a>
+                    </a> 
                 </div>
             </div>
         </div>

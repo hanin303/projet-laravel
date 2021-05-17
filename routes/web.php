@@ -23,7 +23,7 @@ Route::get('/', function ()  {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin');
+Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin')->name('admin.dashboard');
 
 Route::resource('admins' , 'Admin\AdminController');
 
