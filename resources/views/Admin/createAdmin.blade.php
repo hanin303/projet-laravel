@@ -8,7 +8,7 @@
 <fieldset>
    <legend> <i class ="fas fa-user-plus"></i> Add new Admin  </legend>
    <form action ="{{ route('admins.store')}}"method="post"> 
-    @method('GET')
+    <!-- @method('GET') -->
    @csrf
   
    <div class ="form-group">

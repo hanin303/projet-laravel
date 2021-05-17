@@ -13,42 +13,42 @@
   
    <div class ="form-group">
     <label for="nom_produit">nom produit</label>
-    <input type ="text" name="nom_produit" value ="{{old('nom_produit')}}"   id="nom_produit"  class="form-control @error('nom_produit') is-invalid @enderror" placeholder="nom produit " >
-    @error ('nom_produit')
-      <div class=" text-danger">{{ $message}}</div>
-      @enderror
+    <input type ="text" name="nom_produit"   id="nom_produit"  class="form-control @error('nom_produit') is-invalid @enderror" placeholder="nom produit " >
+    @error ('nom_produit')<div class=" text-danger">{{ $message}}</div> @enderror
+      
+     
     </div>
          <div class="row">
               <div class ="col"><div class ="form-group">
                   <label for="stock_produits">Stock </label>
-                  <input type ="text" name="stock_produits" value ="{{old('stock_produits')}}"  id="stock_produits"  class="form-control @error('stock_produits') is-invalid @enderror" placeholder="Stock" >
-                  @error ('stock_produits')
-                  <div class="  text-danger">{{ $message}}</div>
-                  @enderror
+                  <input type ="text" name="stock_produits"  id="stock_produits"  class="form-control @error('stock_produits') is-invalid @enderror" placeholder="Stock" >
+                  @error ('stock_produits')<div class="  text-danger">{{ $message}}</div> @enderror
+                  
+                 
               </div>
              </div>
              <div class ="col"> <div class ="form-group">
                   <label for="prix">prix</label>
-                  <input type ="text" name="prix" value ="{{old('prix')}}" id="prix" class="form-control @error('prix') is-invalid @enderror" placeholder="prix" >
-                  @error ('prix')
-                  <div class="  text-danger">{{ $message}}</div>
-                  @enderror
+                  <input type ="text" name="prix"  id="prix" class="form-control @error('prix') is-invalid @enderror" placeholder="prix" >
+                  @error ('prix')<div class="text-danger">{{ $message}}</div> @enderror
+                  
+                 
            </div>
              </div>
           </div>
 
-                <!-- <div class="row">
+                <div class="row">
                    
                    
                    <div class ="col"> <div class ="form-group">
                         <label for="description_produits">description produits</label>
-                        <input type ="text" name="description_produits" value ="{{old('description_produits')}}" id="description_produits" class="form-control"  @error ('description_produits') is-invalid @enderror placeholder="description produits" >
-                        @error ('description_produits')
-                        <div class="  text-danger">{{ $message}}</div>
-                        @enderror
+                        <input type ="text" name="description_produits" id="description_produits" class="form-control @error('description_produits') is-invalid @enderror"  placeholder="description produits" >
+                        @error ('description_produits')<div class="text-danger">{{ $message}}</div> @enderror
+                        
+                       
                  </div>
                    </div>
-                </div> -->
+                </div> 
 
 
 
