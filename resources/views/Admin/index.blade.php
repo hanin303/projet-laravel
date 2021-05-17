@@ -24,6 +24,17 @@
 @extends('layouts.dashboard')
 @section('content')
 
+@if (session('deleteAdmin'))
+<div class="alert alert-dismissible alert-success fade show" role="alert" width="50px">
+{{ session('deleteAdmin')}}
+<button type="button" class="close" data-dismiss="alert" aria-label="close">
+  <span aria-hidden="true">&times;<span>
+</button>
+</div>
+@endif
+
+
+
 <div class="pcoded-main-container">
   
                 <div class="pcoded-wrapper">
@@ -51,9 +62,14 @@
                     <td>{{$admin ->email_admin}}</td>
                     <td>{{$admin ->phone_admin}}</td>
                     <td>
-                      <a href="{{route('admins.show' , ['admin' =>$admin -> id])}} "class="btn btn-primary"><i class ="fas fa-user-tag"></i> Show</a>
-                      <a href="#" class="btn btn-warning"><i class ="fas fa-user-edit"></i>Edit</a>
-                      <a href="#" class="btn btn-danger"><i class ="fas fa-user-slash"></i>delete</a> 
+                      <a href="{{route('admins.show' , ['admin' =>$admin -> id])}}" class="btn btn-primary"><i class ="fas fa-user-tag"></i> Show</a>
+                      <a href="{{route('admins.edit' , ['admin' =>$admin -> id])}}" class="btn btn-warning" title= "Edit user {{$admin ->first_name.' '.$admin ->last_name}}"><i class ="fas fa-user-edit"></i>Edit</a>
+                      <a href="#" class="btn btn-danger" title= "delete user {{$admin ->first_name.' '.$admin ->last_name}}" 
+                        onclick ="event.preventDefault(); 
+                        document.querySelector('#delete-admin-form').submit()">
+                        <i class ="fas fa-user-slash" ></i></a> 
+                      <form action ="{{route('admins.destroy' , ['admin' =>$admin -> id])}} "method="post" id="delete-admin-form">  @csrf @method('DELETE')
+                      </form>
                     </td>
                   </tr>
                   @endforeach

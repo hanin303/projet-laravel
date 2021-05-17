@@ -6,31 +6,24 @@
                 <div class="pcoded-wrapper">
           
 <fieldset>
-   <legend> <i class ="fas fa-user-plus"></i> Add new Admin  </legend>
-   <form action ="{{ route('admins.store')}}"method="post"> 
-    @method('GET')
+   <legend> <i class ="fas fa-user-edit"></i> Edit Admin : <strong>{{$admin ->first_name.' '.$admin ->last_name}}</strong>  </legend>
+   <form action ="{{ route('admins.update' , ['admin' =>$admin -> id] )}} "method="post"> 
+    @method('PUT')
    @csrf
   
-   <div class ="form-group">
-    <label for="user_name ">User Name </label>
-    <input type ="user_name" name="user_name" value ="{{old('user_name')}}"   id="user_name" class="form-control"  @error ('user_name ') is-invalid @enderror placeholder="user name  " >
-    @error ('user_name')
-      <div class=" text-danger">{{ $message}}</div>
-      @enderror
-    </div>
          <div class="row">
               <div class ="col"><div class ="form-group">
                   <label for="firs_name">First Name </label>
-                  <input type ="text" name="first_name" value ="{{old('first_name')}}"  id="first_name" class="form-control"  @error ('first_Name ') is-invalid @enderror placeholder="first Name" >
-                  @error ('first_name ')
+                  <input type ="text" name="first_name" value ="{{ $admin -> first_name}}"  id="first_name" class="form-control"  @error ('first_Name ') is-invalid @enderror placeholder="first Name" >
+                  @error ('first_name')
                   <div class="  text-danger">{{ $message}}</div>
                   @enderror
               </div>
              </div>
              <div class ="col"> <div class ="form-group">
                   <label for="last_name">Last Name</label>
-                  <input type ="text" name="last_name" value ="{{old('last_name')}}" id="last_name" class="form-control"  @error ('last_Name ') is-invalid @enderror placeholder="last  Name" >
-                  @error ('last_name ')
+                  <input type ="text" name="last_name" value ="{{ $admin -> last_name}}" id="last_name" class="form-control"  @error ('last_Name ') is-invalid @enderror placeholder="last  Name" >
+                  @error ('last_name')
                   <div class="  text-danger">{{ $message}}</div>
                   @enderror
            </div>
@@ -39,54 +32,21 @@
 
         <div class ="form-group">
             <label for="email_admin">Email </label>
-            <input type ="email" name="email_admin" value ="{{old('email_admin')}}" id="email_admin" class="form-control"  @error ('email_Name ') is-invalid @enderror placeholder="user@gmail.com" >
-            @error ('email_admin ')
+            <input type ="email" name="email_admin" value ="{{ $admin -> email_admin}}" id="email_admin" class="form-control"  @error ('email_Name ') is-invalid @enderror placeholder="user@gmail.com" >
+            @error ('email_admin')
                   <div class=" text-danger">{{ $message}}</div>
                   @enderror
             </div>
             <div class ="form-group">
                 <label for="phone_admin ">Phone number </label>
-                <input type ="phone" name="phone_admin" value ="{{old('phone_admin')}}"   id="phone_admin" class="form-control"  @error ('phone_Name ') is-invalid @enderror placeholder="+5489125548 " >
+                <input type ="phone" name="phone_admin" value ="{{ $admin -> phone_admin }}"   id="phone_admin" class="form-control"  @error ('phone_Name ') is-invalid @enderror placeholder="+5489125548 " >
                 @error ('phone_admin')
-                  <div class=" text-danger">{{ $message}}</div>
+                  <div class="  text-danger">{{ $message}}</div>
                   @enderror
                 </div>
 
                 <div class="row">
-                    <div class ="col"><div class ="form-group">
-                        <label for="photo"> Photo </label>
-                        <input type ="text" name="photo" value ="{{old('photo')}}"  id="photo" class="form-control"  @error ('photo ') is-invalid @enderror placeholder="photo" >
-                        @error ('photo')
-                        <div class="  text-danger">{{ $message}}</div>
-                        @enderror
-                    </div>
-                   </div>
-                   
-                   <div class ="col"> <div class ="form-group">
-                        <label for="password">Password</label>
-                        <input type ="password" name="password" value ="{{old('password')}}" id="password" class="form-control"  @error ('password ') is-invalid @enderror placeholder="password" >
-                        @error ('password ')
-                        <div class="  text-danger">{{ $message}}</div>
-                        @enderror
-                 </div>
-                   </div>
-                </div>
 
-
-
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Type id</label>
-                    <select class="form-control" id="type_id">
-                      <option value='1'>Full acceess admin</option>
-                      <option value='2'>limited access admin</option>
-                      <option value='3'>full control admin</option>    
-                    </select>
-                  </div>
-
-
-
-
-                <div class="row">
                     <div class ="col"><button type="submit" class="btn btn-block btn-outline-primary"><i class ="fas fa-save"></i>Save</button></div>
                     <div class ="col"><button type="reset" class="btn btn-block btn-outline-secondary"><i class ="fas fa-window-close"></i>Cancel</button></div>
                 </div>
