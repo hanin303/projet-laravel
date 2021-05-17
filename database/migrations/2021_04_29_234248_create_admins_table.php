@@ -25,6 +25,7 @@ class CreateAdminsTable extends Migration
             $table->integer('type_id')->unsigned();
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 

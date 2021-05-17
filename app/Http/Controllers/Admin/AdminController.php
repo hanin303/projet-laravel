@@ -36,17 +36,21 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate(
+        $validatedData = $request->validate(
             [
-'user_name' => 'required|min:3',
+'user_name' => 'required|min:2',
 'first_name' => 'required|min:3',
 'last_name' => 'required|min:3',
 'email_admin' => 'required|email',
 'phone_admin' => 'required',
-            ]);
+'photo' => 'required|min:2',
+'password' => 'required|min:5',
+'type_id' => 'required',
 
-        $admin = Admin::create($validateData);
-        return redirect()->route('admins.show',$admin);
+            ]);
+  
+        $admin = Admin::create($validatedData);
+        return redirect()->route('admins.index',$admin);
        }
 
     /**
@@ -70,7 +74,7 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        //
+        return view ('Admin.edit' ,['admin' =>  $admin ]);
     }
 
     /**
@@ -82,7 +86,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, Admin $admin)
     {
-        //
+        $validatedData = $request->validate(
+            [
+             'first_name' => 'required|min:3',
+             'last_name' => 'required|min:3',
+             'email_admin' => 'required|email',
+             'phone_admin' => 'required',
+            ]);
+            $admin -> update($validatedData);
+            return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
     }
 
     /**
@@ -93,6 +105,7 @@ class AdminController extends Controller
      */
     public function destroy(Admin $admin)
     {
-        //
+        $admin ->delete();
+        return redirect()->route('admins.index')->with('deleteAdmin','Admin has been deleted successfully !'); 
     }
 }

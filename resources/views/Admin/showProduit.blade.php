@@ -1,4 +1,3 @@
-
 {{----------------------------------- standard navigation --------------------------- --}}
 @extends('layouts.dashboard')
 @section('content')
@@ -6,19 +5,19 @@
 <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <center>
-             <h2><i class ="fas fa-id-card"></i>   Admin Details About : <strong>{{$admin ->first_name.' '.$admin ->last_name}}</strong></h2>
+             <h2><i class ="fas fa-id-card"></i>  Details Produit : <strong>{{$produit ->nom_produit}}</strong></h2>
          <br>
              <div class="card" style="width: 40rem;">
                 <ul class="list-group list-group-flush">
                     <center>
                         <h3>Details</h3>
                     </center>
-                  <li class="list-group-item"><i class ="fas fa-user-tie"></i> Name : <strong><br>{{$admin ->first_name.' '.$admin ->last_name}}</li>
-                  <li class="list-group-item"><i class ="fas fa-envelope-open-text"></i> Email Adress :<strong><br>{{$admin ->email_admin}}</li>
-                  <li class="list-group-item"><i class ="fas fa-mobile-alt"></i> phone number :<strong><br> {{$admin ->phone_admin}}</li>
+                  <li class="list-group-item"><i class="fab fa-product-hunt"></i> nom produit : <strong><br>{{$produit ->nom_produit}}</li>
+                  <li class="list-group-item"><i class ="fas fa-cubes"></i> stock produit :<strong><br>{{$produit ->stock_produits}}</li>
+                  <li class="list-group-item"><i class ="fas fa-hand-holding-usd"></i> prix :<strong><br> {{$produit ->prix}}</li>
                 </ul>
               </div>
-              <a href="/admins" class="btn btn-success"><i class ="fas fa-hand-point-left"></i> back to </a>
+              <a href="/produits" class="btn btn-success"><i class ="fas fa-hand-point-left"></i> back to </a>
              </center>
 
 
@@ -31,7 +30,6 @@
                 </a>
             </div>
         </div>
-    </div>
 
 <!-- Required Jquery -->
 <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
@@ -66,5 +64,4 @@ $window.scroll(function(){
  }
 });
 </script>
-<script src="{{ asset('js/app.js') }}" defer></script>
 @endsection
