@@ -44,9 +44,16 @@ class ProduitController extends Controller
                 'prix' => 'required',
             ]);
 
-        $produit =Produit::create($validatedData);
+            $produit = new Produit;
+            $produit->nom_produit = $request->nom_produit;
+            $produit->stock_produits = $request->stock_produits;
+            $produit->description_produits= $request->description_produits;
+            $produit->prix = $request->prix;
+            $produit->save();
 
-        return redirect()->route('produits.show', $produit)->with('storeProduct', "Product has been added successfuly");
+            return view ('Admin.showProduit');
+      //  return redirect()->route('Admin.showProduit', $produit);
+       
     }
 
     /**
