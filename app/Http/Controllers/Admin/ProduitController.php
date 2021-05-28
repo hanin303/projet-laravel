@@ -36,7 +36,17 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate(
+            [
+                'nom_produit' => 'required',
+                'stock_produits' => 'required',
+                'description_produits' => 'required',
+                'prix' => 'required',
+            ]);
+
+        $produit =Produit::create($validatedData);
+
+        return redirect()->route('produits.show', $produit);
     }
 
     /**
