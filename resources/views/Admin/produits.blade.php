@@ -73,8 +73,8 @@
                   onclick ="event.preventDefault(); 
                   document.querySelector('#delete-produit-form').submit()">
                    <i class ="fas fa-user-slash" ></i></a> 
-                      <form action ="{{route('produits.destroy' , ['produit' =>$produit -> id])}} "method="post" id="delete-produit-form">  @csrf @method('DELETE')
-                      </form> </a>
+                      <form action ="{{route('produits.destroy' , ['produit' =>$produit -> id])}} "method="post" id="delete-produit-form">@csrf @method('DELETE')</form>
+                       </a>
                 
               </td>
 

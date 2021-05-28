@@ -46,7 +46,7 @@ class ProduitController extends Controller
 
         $produit =Produit::create($validatedData);
 
-        return redirect()->route('produits.show', $produit)->with('storeProduct', "Product has been added successfuly");
+        return redirect()->route('produits.show', $produit);
     }
 
     /**
@@ -69,6 +69,7 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
+        
         return view('Admin.editProduit', ['produit' => $produit]);
     }
 
@@ -105,5 +106,5 @@ class ProduitController extends Controller
         return redirect()->route('produits.index')->with('deleteProduct', 'Product has been deleted!');
     }
    
-}
+    }
 
