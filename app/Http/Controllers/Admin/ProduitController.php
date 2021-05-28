@@ -36,24 +36,7 @@ class ProduitController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate(
-            [
-                'nom_produit' => 'required',
-                'stock_produits' => 'required',
-                'description_produits' => 'required',
-                'prix' => 'required',
-            ]);
-
-            $produit = new Produit;
-            $produit->nom_produit = $request->nom_produit;
-            $produit->stock_produits = $request->stock_produits;
-            $produit->description_produits= $request->description_produits;
-            $produit->prix = $request->prix;
-            $produit->save();
-
-            //return view ('Admin.showProduit');
-       return redirect()->route('', $produit);
-       
+        //
     }
 
     /**
@@ -76,6 +59,7 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
+        
         return view('Admin.editProduit', ['produit' => $produit]);
     }
 
@@ -112,5 +96,5 @@ class ProduitController extends Controller
         return redirect()->route('produits.index')->with('deleteProduct', 'Product has been deleted!');
     }
    
-}
+    }
 
