@@ -17,7 +17,7 @@ class CreateProduitsTable extends Migration
                 $table->increments('id');
                 $table->string('nom_produit');
                 $table->integer('stock_produits');
-                $table->string('photo_produit')->default('default_photo.jpg');
+                $table->string('photo_produit');
                 $table->string('description_produits');
                 $table->double('prix',10,3);
                 $table->timestamps();

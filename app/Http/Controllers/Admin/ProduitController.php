@@ -51,8 +51,8 @@ class ProduitController extends Controller
             $produit->prix = $request->prix;
             $produit->save();
 
-            return view ('Admin.showProduit');
-      //  return redirect()->route('Admin.showProduit', $produit);
+            //return view ('Admin.showProduit');
+       return redirect()->route('', $produit);
        
     }
 

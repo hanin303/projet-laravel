@@ -7,7 +7,7 @@
           
 <fieldset>
    <legend> <i class ="fas fa-user-plus"></i> Add new product  </legend>
-   <form action ="{{ route('produits.store')}}"method="post"> 
+   <form action ="{{ route('produits.store')}}" method="post"> 
     @method('GET')
    @csrf
   
