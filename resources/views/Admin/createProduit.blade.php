@@ -11,7 +11,7 @@
    @csrf
   
    <div class ="form-group">
-    <label for="nom_produit">nom produitsssssssssssssssssss</label>
+    <label for="nom_produit">nom produit</label>
     <input type ="text" name="nom_produit" value ="{{old('nom_produit')}}"   id="nom_produit"  class="form-control @error('nom_produit') is-invalid @enderror" placeholder="nom produit " >
     @error ('nom_produit')<div class="text-danger">{{ $message}}</div>@enderror
     </div>
