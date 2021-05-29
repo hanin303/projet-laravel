@@ -18,9 +18,9 @@ class CreateClientsTable extends Migration
             $table->string('nom_client',100);
             $table->string('prenom_client',100);
             $table->string('adresse_client');
-            $table->string('photo_client');
+            $table->string('photo_client')->nullable();
             $table->string('email_client');
-            $table->string('mdp_client');
+            $table->string('mdp_client')->nullable();
             $table->Biginteger('telephone_client');
             $table->timestamps();
         });
