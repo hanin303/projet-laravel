@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Client;
 use App\Http\Controllers\Controller;
+use App\Mail\NewCustomer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class ClientController extends Controller
 {
@@ -46,7 +49,7 @@ class ClientController extends Controller
         $client->adresse_client = $request->adresse;
         $client->save();
 
-      //$client = Client::create($validatationData);
+        Mail::to($client->email_client)->send(new NewCustomer($client));
         return redirect()->route('clients.show',$client);
     }
 
