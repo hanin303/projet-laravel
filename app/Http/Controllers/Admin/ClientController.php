@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Client;
+use App\User;
 use App\Http\Controllers\Controller;
 use App\Mail\NewCustomer;
 use Illuminate\Http\Request;
@@ -18,7 +18,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-       return view ('Admin.Clients.indexClient',['clients' => Client::paginate(2)]);
+
+       return view ('Admin.Clients.indexClient',['clients' => User::paginate(2)]);
     }
 
     /**
@@ -41,25 +42,26 @@ class ClientController extends Controller
     {
         $validatationData = $request->validate($this->ValidationData());
 
-        $client = new Client;
-        $client->nom_client = $request->nom;
-        $client->prenom_client = $request->prenom;
-        $client->telephone_client= $request->telf;
-        $client->email_client = $request->mail;
-        $client->adresse_client = $request->adresse;
+        $client = new User;
+        $client->name= $request->name;
+        $client->email = $request->email;
+        $client->password= $request->password;
+        $client->adresse = $request->adresse;
+        $client->phone= $request->phone;
+        $client->admin = 0;
         $client->save();
 
-        Mail::to($client->email_client)->send(new NewCustomer($client));
+      //  Mail::to($client->email)->send(new NewCustomer($client));
         return redirect()->route('clients.show',$client);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\User  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
+    public function show(User $client)
     {
         return view('Admin.Clients.showClient',['client' => $client]);
     }
@@ -67,10 +69,10 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Client  $client
+     * @param  \App\User  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
+    public function edit(User $client)
     {
         return view('Admin.Clients.editClient',['client'=>$client]);
     }
@@ -79,18 +81,18 @@ class ClientController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
+     * @param  \App\User  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, User $client)
     {
         $validatationData = $request->validate($this->ValidationData());
-
-        $client->nom_client = $request->nom;
-        $client->prenom_client = $request->prenom;
-        $client->telephone_client= $request->telf;
-        $client->email_client = $request->mail;
-        $client->adresse_client = $request->adresse;
+    
+        $client->name= $request->name;
+        $client->email = $request->email;
+        $client->password= $request->password;
+        $client->adresse = $request->adresse;
+        $client->phone= $request->phone;
         $client->save();
         return redirect()->route('clients.show',$client);
       }
@@ -98,10 +100,10 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Client  $client
+     * @param  \App\User  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(User $client)
     {
         $client->delete();
         return redirect()->route('clients.index');
@@ -110,11 +112,11 @@ class ClientController extends Controller
 
     private function ValidationData(){
         return [
-            'nom' =>'required|min:2',
-            'prenom' =>'required|min:2',
-            'telf' =>'required|size:11',
-            'mail' =>'required|email',
+            'name' =>'required|min:2',
+            'email' =>'required|email',
             'adresse' =>'required|min:2',
+            'password' =>'required|min:8',
+            'phone' =>'required|size:8',
         ];
     }
 }
