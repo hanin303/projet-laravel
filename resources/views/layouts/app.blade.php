@@ -22,22 +22,19 @@
     
 </head>
 <body>
-    <div id="app">
-        @include('layouts.NavBar')
-
-        <div class="container">
-        <main class="py-4">
-            @yield('content')
-        </main>
+        <div>
+            @include('layouts.NavBar')
         </div>
-    </div>
-    <div class="footer-copyright text-center py-5 ">© 2020 Copyright:
-  <a href="https://mdbootstrap.com/" > MDBootstrap.com</a>
-</div>
-<!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+        <div class="container" >
+               <main class="py-4" id="body">
+                    @yield('content')
+                </main>
+        </div>
+    <footer>    
+        <div class="footer-copyright text-center py-5 ">© 2020 Copyright:
+             <a href="https://mdbootstrap.com/" > MDBootstrap.com</a>
+        </div>
+    </footer>
 
 </body>
 
