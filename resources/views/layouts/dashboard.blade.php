@@ -23,6 +23,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard_Admin.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://kit.fontawesome.com/3a7c0ab2e8.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
 </head>
 <body>
@@ -44,43 +47,43 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                           <a class="nav-link active" href="/admin">
-                            <span data-feather="home"></span>
-                            Dashboard <span class="sr-only">(current)</span>
+                            <span><i class="fas fa-home"></i></span>
+                           Dashboard <span class="sr-only">(current)</span>
                           </a>
                         </li>
                          <li class="nav-item">
                            <a class="nav-link" href="/admins">
-                              <span data-feather="file-text"></span>
-                             Admins
+                            <span><i class="fas fa-user-shield"></i></span>
+                             Admins 
                             </a>
                           </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="file"></span>
+                            <span><i class="fas fa-share-square"></i></span>
                             Orders
                           </a>
                         </li>
                         <li class="nav-item">
             <a class="nav-link" href="/produits">
-              <span data-feather="shopping-cart"></span>
+              <span><i class="fas fa-shopping-cart"></i></span>
               Products
             </a>
           </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/clients">
-                            <span data-feather="clients"></span>
+                            <span><i class="fas fa-users"></i></span>
                             Clients
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
+                            <span><i class="fas fa-file-alt"></i></span>
                             Reports
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
+                             <span><i class="fab fa-adversal"></i></span>
                             Integrations
                           </a>
                         </li>
@@ -95,25 +98,25 @@
                       <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
+                            <span><i class="fas fa-calendar-alt"></i></span>
                             Current month
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
+                            <span><i class="fas fa-calendar-plus"></i></span>
                             Last quarter
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
+                            <span><i class="fab fa-twitter-square"></i></span>
                             Social engagement
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#">
-                            <span data-feather="file-text"></span>
+                            <span><i class="fab fa-salesforce"></i></span>
                             Year-end sale
                           </a>
                         </li>

@@ -16,7 +16,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
+                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"><i class="fas fa-users"></i></i>
                                                         <span class="text-c-blue f-w-600">Visitors</span>
                                                         <h4>View details</h4>
                                                         <div>
@@ -32,7 +32,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
+                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"><i class="fas fa-file-invoice-dollar"></i></i>
                                                         <span class="text-c-pink f-w-600">Revenue</span>
                                                         <h4>$23,589</h4>
                                                         <div>
@@ -48,7 +48,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-warning-alt bg-c-green card1-icon"></i>
+                                                        <i class="icofont icofont-warning-alt bg-c-green card1-icon"><i class="fas fa-cart-arrow-down"></i></i>
                                             
                                                         <span class="text-c-green f-w-600"> orders!</span>
                                                         <h4>45</h4>
@@ -65,7 +65,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card widget-card-1">
                                                     <div class="card-block-small">
-                                                        <i class="icofont icofont-social-twitter bg-c-yellow card1-icon"></i>
+                                                        <i class="icofont icofont-social-twitter bg-c-yellow card1-icon"><i class="fas fa-user-secret"></i></i>
                                                         <span class="text-c-yellow f-w-600">Followers</span>
                                                         <h4>+562</h4>
                                                         <div>
@@ -105,7 +105,7 @@
                                             <div class="col-md-12 col-xl-4">
                                                     <div class="card fb-card">
                                                         <div class="card-header">
-                                                            <i class="icofont icofont-social-facebook"></i>
+                                                            <span><i class="fab fa-facebook-square"></i></span>
                                                             <div class="d-inline-block">
                                                                 <h5>facebook</h5>
                                                                 <span>blog page timeline</span>
@@ -126,7 +126,7 @@
                                                     </div>
                                                     <div class="card dribble-card">
                                                         <div class="card-header">
-                                                            <i class="icofont icofont-social-dribbble"></i>
+                                                            <i class="icofont icofont-social-dribbble"><i class="fas fa-store"></i></i>
                                                             <div class="d-inline-block">
                                                                 <h5>dribble</h5>
                                                                 <span>Product page analysis</span>
@@ -147,7 +147,7 @@
                                                     </div>
                                                     <div class="card twitter-card">
                                                         <div class="card-header">
-                                                            <i class="icofont icofont-social-twitter"></i>
+                                                            <span><i class="fab fa-twitter-square"></i></span>
                                                             <div class="d-inline-block">
                                                                 <h5>twitter</h5>
                                                                 <span>current new timeline</span>
@@ -293,7 +293,7 @@
                                                                 <label class="check-task d-block">
                                                                     <input type="checkbox" value="">
                                                                     <span class="cr">
-                                                                        <i class="cr-icon icofont icofont-ui-check txt-default"></i>
+                                                                        <i class="far fa-handshake"></i>
                                                                     </span>
                                                                     <span><h6>Schedule Meeting with Compnes <span class="label bg-c-green m-l-10 f-10">2 week</span></h6></span>
                                                                     <div class="task-card-img m-l-40">
@@ -321,7 +321,7 @@
                                                                     <span class="cr">
                                                                         <i class="cr-icon icofont icofont-ui-check txt-default"></i>
                                                                     </span>
-                                                                    <span><h6>Create template, admin with responsive<span class="label bg-c-pink m-l-10">2 week</span></h6></span>
+                                                                    <span><h5>Create template, admin with responsive<span class="label bg-c-pink m-l-10">2 week</span></h5></span>
                                                                     <div class="task-card-img m-l-40">
                                                                         <a href="#!"><img src="assets/images/avatar-2.jpg" data-toggle="tooltip" title="Alia" alt="" class="img-40"></a>
                                                                         <a href="#!"><img src="assets/images/avatar-3.jpg" data-toggle="tooltip" title="Suzen" alt="" class="img-40 m-l-10"></a>

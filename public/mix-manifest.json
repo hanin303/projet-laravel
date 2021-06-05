@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/dashboard_Admin.css": "/css/dashboard_Admin.css",
-    "/css/welcome.css": "/css/welcome.css"
+    "/css/welcome.css": "/css/welcome.css",
+    "/css/PanierStyle.css": "/css/PanierStyle.css"
 }
