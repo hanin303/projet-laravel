@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@welcome')->name('welcome');
 
 
 
+
 /*
 Route::get('/', function ()  {
     return view('welcome');
@@ -26,6 +27,7 @@ Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Panier', 'HomeController@Panier')->name('Panier');
 Route::get('/admin', 'HomeController@dashboardAdmin')->middleware('auth','admin')->name('admin.dashboard');
 
 Route::resource('admins' , 'Admin\AdminController');
