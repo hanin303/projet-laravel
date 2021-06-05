@@ -25,7 +25,7 @@
                                 <label><i class ="fas fa-user-tie"></i>  Nom</label>
                             </div>
                             <div class="col-md-6">
-                                <p>{{ $client->prenom_client.' '.$client->nom_client}}</p>
+                                <p>{{ $client->name}}</p>
                             </div>
                         </div>
                     </h5>
@@ -35,7 +35,7 @@
                             <label><i class="fas fa-address-card"></i> Adresse</label>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ $client->	adresse_client}}</p>
+                            <p>{{ $client->adresse}}</p>
                         </div>
                     </div>
                 
@@ -44,7 +44,7 @@
                             <label><i class="fas fa-at"></i> Email</label>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ $client->	email_client}}</p>
+                            <p>{{ $client->email}}</p>
                         </div>
                     </div>
                     
@@ -53,7 +53,7 @@
                             <label><i class="fas fa-phone"></i> Téléphone</label>
                         </div>
                         <div class="col-md-6">
-                            <p>{{ $client->telephone_client}}</p>
+                            <p>{{ $client->phone}}</p>
                         </div>
                     </div>
                 </p>
