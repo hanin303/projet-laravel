@@ -18,7 +18,7 @@ class CreateCommandesTable extends Migration
             $table->date('Date_commande');   
             $table->integer('client_id')->unsigned();   
             $table->timestamps();
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('client_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
     
         });
     }
