@@ -6,41 +6,48 @@
                 <div class="pcoded-wrapper">
           
 <fieldset>
-   <legend> <i class ="fas fa-user-edit"></i> Edit Admin : <strong>{{$admin ->first_name.' '.$admin ->last_name}}</strong>  </legend>
+   <legend> <i class ="fas fa-user-edit"></i> Edit Admin : <strong>{{$admin ->name}}</strong>  </legend>
    <form action ="{{ route('admins.update' , ['admin' =>$admin -> id] )}} "method="post"> 
     @method('PUT')
    @csrf
   
-         <div class="row">
-              <div class ="col"><div class ="form-group">
-                  <label for="firs_name">First Name </label>
-                  <input type ="text" name="first_name" value ="{{ $admin -> first_name}}"  id="first_name" class="form-control"  @error ('first_Name ') is-invalid @enderror placeholder="first Name" >
-                  @error ('first_name')
+   <div class="row">
+    <div class ="col"><div class ="form-group">
+                  <label for="name"> Name </label>
+                  <input type ="text" name="name" value ="{{ $admin -> name}}"  id="name" class="form-control"  @error ('name ') is-invalid @enderror placeholder="first Name" >
+                  @error ('name')
                   <div class="  text-danger">{{ $message}}</div>
                   @enderror
               </div>
-             </div>
-             <div class ="col"> <div class ="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type ="text" name="last_name" value ="{{ $admin -> last_name}}" id="last_name" class="form-control"  @error ('last_Name ') is-invalid @enderror placeholder="last  Name" >
-                  @error ('last_name')
-                  <div class="  text-danger">{{ $message}}</div>
-                  @enderror
-           </div>
-             </div>
           </div>
-
+        <div class ="col">
         <div class ="form-group">
-            <label for="email_admin">Email </label>
-            <input type ="email" name="email_admin" value ="{{ $admin -> email_admin}}" id="email_admin" class="form-control"  @error ('email_Name ') is-invalid @enderror placeholder="user@gmail.com" >
-            @error ('email_admin')
+            <label for="email">Email </label>
+            <input type ="email" name="email" value ="{{ $admin -> email}}" id="email" class="form-control"  @error ('email') is-invalid @enderror placeholder="user@gmail.com" >
+            @error ('email')
+                  <div class=" text-danger">{{ $message}}</div>
+                  @enderror
+            </div>
+        </div>
+         </div>
+            <div class ="form-group">
+                <label for="password">Password </label>
+                <input type ="password" name="password" value ="{{ $admin -> password}}" id="password" class="form-control"  @error ('password') is-invalid @enderror placeholder="password" >
+                @error ('password')
+                      <div class=" text-danger">{{ $message}}</div>
+                      @enderror
+                </div>
+                   <div class ="form-group">
+            <label for="adress">Adress </label>
+            <input type ="adress" name="adress" value ="{{ $admin -> adress}}" id="adress" class="form-control"  @error ('adress') is-invalid @enderror placeholder="Adress" >
+            @error ('adress')
                   <div class=" text-danger">{{ $message}}</div>
                   @enderror
             </div>
             <div class ="form-group">
-                <label for="phone_admin ">Phone number </label>
-                <input type ="phone" name="phone_admin" value ="{{ $admin -> phone_admin }}"   id="phone_admin" class="form-control"  @error ('phone_Name ') is-invalid @enderror placeholder="+5489125548 " >
-                @error ('phone_admin')
+                <label for="phone">Phone number </label>
+                <input type ="phone" name="phone" value ="{{ $admin -> phone}}"   id="phone" class="form-control"  @error ('phone') is-invalid @enderror placeholder="+5489125548 " >
+                @error ('phone')
                   <div class="  text-danger">{{ $message}}</div>
                   @enderror
                 </div>

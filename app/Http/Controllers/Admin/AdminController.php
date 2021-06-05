@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Admin;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view ('Admin.index' , ['admins' => Admin::all()]);
+        return view ('Admin.index' , ['admins' => User::all()]);
     }
 
     /**
@@ -38,16 +38,21 @@ class AdminController extends Controller
     {
         $validatedData = $request->validate(
             [
-'user_name' => 'required|min:2',
-'first_name' => 'required|min:3',
-'last_name' => 'required|min:3',
-'email_admin' => 'required|email',
-'phone_admin' => 'required',
+'name' => 'required|min:3',
+'email' => 'required|email',
 'password' => 'required|min:5',
+'adress' => 'required|min:5',
+'phone' => 'required',
 
             ]);
-  
-        $admin = Admin::create($validatedData);
+        $admin = new User;
+        $admin->admin = 1;
+        $admin->name= $request->name;
+        $admin->email = $request->email;
+        $admin->password= $request->password;
+        $admin->adresse = $request->adresse;
+        $admin->phone= $request->phone;
+        $admin->save();
         return redirect()->route('admins.index',$admin);
        }
 
@@ -59,7 +64,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $admin = Admin::find($id); 
+        $admin = User::find($id); 
         return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
 
     }
@@ -67,10 +72,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\User $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit(User $admin)
     {
         return view ('Admin.edit' ,['admin' =>  $admin ]);
     }
@@ -79,17 +84,19 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Admin  $admin
+     * @param  \App\User  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, User $admin)
     {
         $validatedData = $request->validate(
             [
-             'first_name' => 'required|min:3',
-             'last_name' => 'required|min:3',
-             'email_admin' => 'required|email',
-             'phone_admin' => 'required',
+                'name' => 'required|min:3',
+                'email' => 'required|email',
+                'password' => 'required|min:5',
+                'adress' => 'required|min:5',
+                'phone' => 'required',
+                
             ]);
             $admin -> update($validatedData);
             return view ('Admin.showAdmin' ,['admin' =>  $admin ]);
@@ -97,10 +104,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Admin  $admin
+     * @param  \App\User  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy(User $admin)
     {
         $admin ->delete();
         return redirect()->route('admins.index')->with('deleteAdmin','Admin has been deleted successfully !'); 

@@ -6,16 +6,16 @@
 <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <center>
-             <h2><i class ="fas fa-id-card"></i>   Admin Details About : <strong>{{$admin ->first_name.' '.$admin ->last_name}}</strong></h2>
+             <h2><i class ="fas fa-id-card"></i>   Admin Details About : <strong>{{$admin ->name}}</strong></h2>
          <br>
              <div class="card" style="width: 40rem;">
                 <ul class="list-group list-group-flush">
                     <center>
                         <h3>Details</h3>
                     </center>
-                  <li class="list-group-item"><i class ="fas fa-user-tie"></i> Name : <strong><br>{{$admin ->first_name.' '.$admin ->last_name}}</li>
-                  <li class="list-group-item"><i class ="fas fa-envelope-open-text"></i> Email Adress :<strong><br>{{$admin ->email_admin}}</li>
-                  <li class="list-group-item"><i class ="fas fa-mobile-alt"></i> phone number :<strong><br> {{$admin ->phone_admin}}</li>
+                  <li class="list-group-item"><i class ="fas fa-user-tie"></i> Name : <strong><br>{{$admin ->name}}</li>
+                  <li class="list-group-item"><i class ="fas fa-envelope-open-text"></i> Email Adress :<strong><br>{{$admin ->email}}</li>
+                  <li class="list-group-item"><i class ="fas fa-mobile-alt"></i> phone number :<strong><br> {{$admin ->phone}}</li>
                 </ul>
               </div>
               <a href="/admins" class="btn btn-success"><i class ="fas fa-hand-point-left"></i> back to </a>

@@ -47,7 +47,7 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col"><i class ="fas fa-user"></i>    Name</th>
+                    <th scope="col"><i class ="fas fa-user"></i>   Name</th>
                     <th scope="col"><i class ="fas fa-envelope"></i>   Email</th>
                     <th scope="col"><i class ="fas fa-phone"></i>   phone</th>
                     <th scope="col"><i class ="fas fa-cogs"></i>    operations</th>
@@ -58,13 +58,13 @@
                         
                   <tr>
                     <th scope="row">{{ $Key }}</th>
-                    <td>{{$admin ->first_name.' '.$admin ->last_name}}</td>
-                    <td>{{$admin ->email_admin}}</td>
-                    <td>{{$admin ->phone_admin}}</td>
+                    <td>{{$admin->name}}</td>
+                    <td>{{$admin->email}}</td>
+                    <td>{{$admin->phone}}</td>
                     <td>
                       <a href="{{route('admins.show' , ['admin' =>$admin -> id])}}" class="btn btn-primary"><i class ="fas fa-user-tag"></i> Show</a>
-                      <a href="{{route('admins.edit' , ['admin' =>$admin -> id])}}" class="btn btn-warning" title= "Edit user {{$admin ->first_name.' '.$admin ->last_name}}"><i class ="fas fa-user-edit"></i>Edit</a>
-                      <a href="#" class="btn btn-danger" title= "delete user {{$admin ->first_name.' '.$admin ->last_name}}" 
+                      <a href="{{route('admins.edit' , ['admin' =>$admin -> id])}}" class="btn btn-warning" title= "Edit user {{$admin ->name}}"><i class ="fas fa-user-edit"></i>Edit</a>
+                      <a href="#" class="btn btn-danger" title= "delete user {{$admin ->name}}" 
                         onclick ="event.preventDefault(); 
                         document.querySelector('#delete-admin-form').submit()">
                         <i class ="fas fa-user-slash" ></i></a> 
