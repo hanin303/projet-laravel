@@ -30,14 +30,13 @@
 
 
   @if (session('deleteProduit'))
-
-<div class="alert alert-dismissible alert-success fade show" role="alert" width="50px">
-{{ session('deleteProduit')}}
-<button type="button" class="close" data-dismiss="alert" aria-label="close">
-  <span aria-hidden="true">&times;<span>
-</button>
-</div>
-@endif
+    <div class="alert alert-dismissible alert-success fade show" role="alert" width="50px">
+    {{ session('deleteProduit')}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+      <span aria-hidden="true">&times;<span>
+    </button>
+    </div>
+  @endif
 
 
   <div class="pcoded-main-container">
@@ -69,6 +68,7 @@
               <td>
                 <a href="{{route('produits.show' , ['produit' =>$produit -> id])}}" title= "show product" class="btn btn-primary" style="background-color: #0082ca;"><i class="fas fa-user-tag"></i></a>
                 <a href="{{route('produits.edit' , ['produit' =>$produit -> id])}}" title= "Edit product {{$produit ->name}}" class="btn btn-warning" style="background-color: #ffac44;"><i class="fas fa-user-edit"></i> </a>
+              
                 <a href="#" class="btn btn-danger" title= "delete produit {{$produit -> nom_produit}}" style="background-color: #c61118;" 
                   onclick ="event.preventDefault(); 
                   document.querySelector('#delete-produit-form').submit()">

@@ -13,7 +13,7 @@
                   </a>
             </div>
             <div class="list-group">
-                <a class="nav-link active" href="/Panier">
+                <a class="nav-link active" href="/details">
                     <span><i class="fas fa-shopping-cart"></i></span>
                Panier <span class="sr-only"></span>
                   </a>

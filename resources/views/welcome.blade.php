@@ -161,7 +161,13 @@
                             <a>{{$produit->nom_produit}} </a><br>
                         </h4>
                         <h5>{{$produit->prix}}</h5>
-                        <a class="btn btn-warning" href="panier.php"><i class="fas fa-shopping-cart"></i>Ajouter au panier</a>
+                        <form action="/commandes" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$produit->id}}">
+                            <input type="hidden" name="nom_produit" value="{{$produit->nom_produit}}">
+                            <input type="hidden" name="prix" value="{{$produit->prix}}">
+                            <button type="submit" class="btn btn-warning"><i class="fas fa-shopping-cart"></i>Ajouter au panier</button>
+                            </form>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
