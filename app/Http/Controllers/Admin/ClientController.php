@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Commande;
+
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\NewCustomer;
 use Illuminate\Http\Request;
@@ -50,6 +53,17 @@ class ClientController extends Controller
         $client->phone= $request->phone;
         $client->admin = 0;
         $client->save();
+
+        if(Auth::user()){     
+            $user = Auth::user()->id ;
+               //dd($id);
+           }
+
+        $commande = new Commande;
+        $commande->Date_commande = new \DateTime('now');
+        $commande->user_id = $user;
+        $commande->save();
+        $this->Cmd = $commande->id;
 
       //  Mail::to($client->email)->send(new NewCustomer($client));
         return redirect()->route('clients.show',$client);

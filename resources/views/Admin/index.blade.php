@@ -25,12 +25,12 @@
 @section('content')
 
 @if (session('deleteAdmin'))
-<div class="alert alert-dismissible alert-success fade show" role="alert" width="50px">
-{{ session('deleteAdmin')}}
-<button type="button" class="close" data-dismiss="alert" aria-label="close">
-  <span aria-hidden="true">&times;<span>
-</button>
-</div>
+  <div class="alert alert-dismissible alert-success fade show" role="alert" width="50px">
+  {{ session('deleteAdmin')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;<span>
+  </button>
+  </div>
 @endif
 
 
@@ -64,12 +64,14 @@
                     <td>
                       <a href="{{route('admins.show' , ['admin' =>$admin -> id])}}" class="btn btn-primary"><i class ="fas fa-user-tag"></i> Show</a>
                       <a href="{{route('admins.edit' , ['admin' =>$admin -> id])}}" class="btn btn-warning" title= "Edit user {{$admin ->name}}"><i class ="fas fa-user-edit"></i>Edit</a>
+                     
                       <a href="#" class="btn btn-danger" title= "delete user {{$admin ->name}}" 
                         onclick ="event.preventDefault(); 
                         document.querySelector('#delete-admin-form').submit()">
                         <i class ="fas fa-user-slash" ></i></a> 
                       <form action ="{{route('admins.destroy' , ['admin' =>$admin -> id])}} "method="post" id="delete-admin-form">  @csrf @method('DELETE')
                       </form>
+                      
                     </td>
                   </tr>
                   @endforeach

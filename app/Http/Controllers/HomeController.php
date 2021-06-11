@@ -36,6 +36,8 @@ class HomeController extends Controller
         $produits = Produit::inRandomOrder()->limit(6)->get();
         return view('welcome',['Produits'=>$produits]);
     }
+
+
     public function Panier()
     {
         return view('Panier');
